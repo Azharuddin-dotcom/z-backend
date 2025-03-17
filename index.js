@@ -19,7 +19,7 @@ const uri = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
+app.use(cors({ origin: "https://z-fnd.netlify.app/"}));
 app.use(express.json());
 
 app.use(bodyParser.json());
