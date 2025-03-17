@@ -25,6 +25,12 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+
+// Root endpoint
+app.get('/', (req, res) => {
+  res.send('Welcome to the backend!');
+});
+
 app.get("/allHoldings", async (req, res) => {
   let allHoldings = await HoldingsModel.find({});
   res.json(allHoldings);
